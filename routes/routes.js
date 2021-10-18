@@ -28,14 +28,14 @@ router.post("/login", login);
 router.post("/save", isAuthenticatedAPI, save);
 
 router.get("/checkToken", isAuthenticatedAPI, (req, res) => {
-  return res.json({ result: "yay" });
+  return res.json(req.body);
 });
 
 router.get("/search_history", isAuthenticatedAPI, searchHistory);
 
 router.post("/logout", (req, res) => {
   res.clearCookie("auth");
-  return res.json({ result: "success" });
+  return res.json(req.body);
 });
 
 //need to use module.exports since 'require' is used to route in server.js

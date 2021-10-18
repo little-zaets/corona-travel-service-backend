@@ -16,9 +16,12 @@ app.use(cookieParser());
 
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://red-avert-client.herokuapp.com/"
+  );
 	console.log('here')
-
+  console.log(res);
   // Request methods you wish to allow
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -28,7 +31,7 @@ app.use(function (req, res, next) {
   // Request headers you wish to allow
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
+    "X-Requested-With, Content-Type, Origin"
   );
 
   // Set to true if you need the website to include cookies in the requests sent
@@ -49,5 +52,6 @@ readdirSync("./routes").map((r) => {
 });
 
 //access .env variables
+console.log("Database_URL", process.env.DATABASE_URL);
 const port = process.env.PORT || 3001;
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(port, () => console.log(`Server is running on port ${port}`));   
