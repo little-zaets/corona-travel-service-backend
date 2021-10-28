@@ -25,7 +25,7 @@ const router = express.Router();
 //need post because will receive post request from client
 router.post("/api/register", register);
 router.post("/api/login", login);
-router.post("/save", isAuthenticatedAPI, save);
+router.post("/api/save", isAuthenticatedAPI, save);
 
 router.get("/api/checkToken", isAuthenticatedAPI, (req, res) => {
   return res.json(req.body);
