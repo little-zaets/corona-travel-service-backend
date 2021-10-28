@@ -23,17 +23,17 @@ const isAuthenticatedAPI = async (req, res, next) => {
 const router = express.Router();
 
 //need post because will receive post request from client
-router.post("/register", register);
-router.post("/login", login);
+router.post("/api/register", register);
+router.post("/api/login", login);
 router.post("/save", isAuthenticatedAPI, save);
 
-router.get("/checkToken", isAuthenticatedAPI, (req, res) => {
+router.get("/api/checkToken", isAuthenticatedAPI, (req, res) => {
   return res.json(req.body);
 });
 
-router.get("/search_history", isAuthenticatedAPI, searchHistory);
+router.get("/api/search_history", isAuthenticatedAPI, searchHistory);
 
-router.post("/logout", (req, res) => {
+router.post("/api/logout", (req, res) => {
   res.clearCookie("auth");
   return res.json(req.body);
 });
