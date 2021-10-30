@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
   // Website you wish to allow to connect
 	res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://red-avert-client.herokuapp.com"
+    process.env.ALLOW_URL
   );
 	console.log('here')
   console.log(res);
@@ -48,7 +48,7 @@ app.use(express.static(__dirname + '/public'));
 //route middleware
 //get each 'route' file and apply as middleware
 readdirSync("./routes").map((r) => {
-  app.use("/api", require(`./routes/${r}`)); //r is filename
+  app.use("/", require(`./routes/${r}`)); //r is filename
 });
 
 //access .env variables

@@ -27,7 +27,7 @@ router.get('/', (req, res, next) => {
 });
 
 //need post because will receive post request from client
-router.post("register", register);
+router.post("/register", register);
 router.post("/login", login);
 router.post("/save", isAuthenticatedAPI, save);
 
