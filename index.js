@@ -17,9 +17,7 @@ app.use(cookieParser());
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
 	res.setHeader(
-    "Access-Control-Allow-Origin",
-    process.env.ALLOW_URL
-  );
+    "Access-Control-Allow-Origin", process.env.ALLOW_URL);
 	console.log('here')
   console.log(res);
   // Request methods you wish to allow
@@ -47,7 +45,7 @@ app.use(express.static(__dirname + '/public'));
 
 //route middleware
 //get each 'route' file and apply as middleware
-readdirSync("./routes").map((r) => {
+readdirSync("/routes").map((r) => {
   app.use("/", require(`./routes/${r}`)); //r is filename
 });
 
