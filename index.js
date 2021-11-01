@@ -48,8 +48,8 @@ app.use(express.static(__dirname + '/public'));
 
 //route middleware
 //get each 'route' file and apply as middleware
-readdirSync("/routes").map((r) => {
-  app.use("/", require(`/routes/${r}`)); //r is filename
+readdirSync("./routes").map((r) => {
+  app.use("/", require(`./routes/${r}`)); //r is filename
 });
 
 //access .env variables
