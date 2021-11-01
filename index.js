@@ -9,6 +9,7 @@ const app = express();
 
 //middlewares
 app.use(cors());
+app.options("*", cors());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true })); //parse url data of type encoded
 app.use(express.json());
@@ -31,7 +32,7 @@ app.use(function (req, res, next) {
   // Request headers you wish to allow
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "X-Requested-With, Content-Type, Origin"
+    "X-Requested-With, Content-Type, Origin, Accept"
   );
 
   // Set to true if you need the website to include cookies in the requests sent
