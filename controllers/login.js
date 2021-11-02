@@ -1,6 +1,6 @@
 //ORM
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 const db = require("../modules/db").db; // .db assigns exported module object exported from db.js
 require("dotenv").config();
 
