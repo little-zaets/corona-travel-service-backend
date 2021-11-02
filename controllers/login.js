@@ -32,7 +32,8 @@ export const login = (req, res) => {
             console.log("token", token);
             res.cookie("auth", token, {
               maxAge: 900000,
-              sameSite: "None"
+              sameSite: "None",
+              secure: true
             });
             res.status(200).json({ user: user[0], token: token });
           })
