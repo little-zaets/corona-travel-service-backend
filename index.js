@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
   // Website you wish to allow to connect
 	res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://red-avert-client.herokuapp.com"
+    "https://red-avert-client.herokuapp.com/"
   );
 	console.log('here')
   console.log(res);
