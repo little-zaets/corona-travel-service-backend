@@ -8,8 +8,8 @@ require('dotenv').config();
 const app = express();
 
 //middlewares
-app.use(cors());
-app.options("*", cors());
+// app.use(cors());
+// app.options("*", cors());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true })); //parse url data of type encoded
 app.use(express.json());
@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
   // Website you wish to allow to connect
 	res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://red-avert-client.herokuapp.com/"
+    "https://red-avert-client.herokuapp.com"
   );
 	console.log('here')
   console.log(res);

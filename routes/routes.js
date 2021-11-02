@@ -23,7 +23,7 @@ const isAuthenticatedAPI = async (req, res, next) => {
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-	res.send('API Status: Running', process.env);
+	res.send('API Status: Running');
 });
 
 //need post because will receive post request from client
